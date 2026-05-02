@@ -11,6 +11,7 @@ services:
             - ${CONFIG}/web/crontabs:/var/spool/cron/crontabs:Z
             - ${CONFIG}/transcripts:/usr/share/jitsi-meet/transcripts:Z
             - ${CONFIG}/web/load-test:/usr/share/jitsi-meet/load-test:Z
+            - ${CONFIG}/web/libs:/usr/share/jitsi-meet/libs:ro
         labels:
             service: "jitsi-web"
         environment:
@@ -221,6 +222,7 @@ services:
             - ENABLE_GUESTS
             - ENABLE_IPV6
             - ENABLE_LOBBY
+            - CONFIG_OVERWRITE
             - ENABLE_RECORDING
             - ENABLE_S2S
             - ENABLE_TRANSCRIPTIONS
@@ -384,6 +386,9 @@ services:
             - ENABLE_AUTO_LOGIN
             - JICOFO_AUTH_LIFETIME
             - JICOFO_AUTH_PASSWORD
+            - JICOFO_AUTH_TYPE
+            - JICOFO_ENABLE_AUTH
+            - ENABLE_AUTO_OWNER
             - JICOFO_AUTH_TYPE
             - JICOFO_BRIDGE_REGION_GROUPS
             - JICOFO_ENABLE_AUTH
