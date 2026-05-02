@@ -6,3 +6,4 @@ log-analyser/grafana
 **/.DS_Store
 **/.idea
 custom-build/
+prosody/rootfs/prosody-plugins-custom/
